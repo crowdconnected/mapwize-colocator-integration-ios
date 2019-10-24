@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>7b63e66f6a5bebaea25fc5a0e276d5ec</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>If you grant me when in use location permission, I will give you a candy! :D</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>If you grant me always and in use location permission, I will give you a chocolate! :D</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>If you grant me always location permission, I will give you a chocolate! :D</string>
+	<key>MWZMapwizeApiKey</key>
+	<string>7b63e66f6a5bebaea25fc5a0e276d5ec</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
