@@ -1,4 +1,9 @@
 PODS:
+  - CCLocation (2.4.0):
+    - ReSwift (= 5.0.0)
+    - SocketRocket (= 0.4.2)
+    - SwiftProtobuf (= 1.6.0)
+    - TrueTime (= 5.0.3)
   - IndoorLocation (1.0.4)
   - Mapbox-iOS-SDK (5.4.0)
   - MapwizeSDK (3.0.1):
@@ -7,26 +12,41 @@ PODS:
     - SSZipArchive (= 2.2.2)
   - MapwizeUI (2.0.1):
     - MapwizeSDK (= 3.0.1)
+  - ReSwift (5.0.0)
+  - SocketRocket (0.4.2)
   - SSZipArchive (2.2.2)
+  - SwiftProtobuf (1.6.0)
+  - TrueTime (5.0.3)
 
 DEPENDENCIES:
+  - CCLocation
   - MapwizeUI (~> 2.0)
 
 SPEC REPOS:
   trunk:
+    - CCLocation
     - IndoorLocation
     - Mapbox-iOS-SDK
     - MapwizeSDK
     - MapwizeUI
+    - ReSwift
+    - SocketRocket
     - SSZipArchive
+    - SwiftProtobuf
+    - TrueTime
 
 SPEC CHECKSUMS:
+  CCLocation: 6ab4da9c45f44517739b2fe6b241746b76ea9459
   IndoorLocation: 9812c8c2d499ef25e6146ef90cf23f8d107213a8
   Mapbox-iOS-SDK: 2b58f752d94e57e95b8e54f3b52569199f6efdba
   MapwizeSDK: d04d0bb154f7d26a8f0327f1cc4a5d4a5f1b14fe
   MapwizeUI: 3e2bd3b8562ae68107aeb854d31a93c9b5096ba3
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
+  TrueTime: b49551ffafb28a9dee04e51b226f42a416010842
 
-PODFILE CHECKSUM: 03b087caf6e73455870ff97bf9a45a3ced655e8c
+PODFILE CHECKSUM: f00c943bc780f7f2533d5a4f9732e171d108a1d7
 
 COCOAPODS: 1.8.4

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapwizeUI
+import CCLocation
 
 class ViewController: UIViewController {
     let venueID = "5daf325c4ddf80001615f1e3" // ETL 2019
@@ -19,18 +20,26 @@ class ViewController: UIViewController {
     var mapwizeApi: MWZMapwizeApi?
 
     let indoorLocationProvider = ILIndoorLocationProvider()
-    var lastIndoorLocation: ILIndoorLocation?
+    var lastIndoorLocation: ILIndoorLocation? {
+        didSet {
+            if lastIndoorLocation != nil {
+                map.followUserButton.isEnabled = true
+            }
+        }
+    }
     var lastDirection: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
         configureMap()
+        
+        configureCCLocation()
+        
         configureLocationProvider()
     }
 
@@ -51,7 +60,20 @@ class ViewController: UIViewController {
         map = MWZMapwizeView(frame: fr, mapwizeConfiguration: mapwizeConfiguration, mapwizeOptions: op, uiSettings: ui)
         map.delegate = self
         map.followUserButton.delegate = self
+        map.followUserButton.isEnabled = false
         view.addSubview(map)
+    }
+    
+    private func configureCCLocation() {
+        let ccLocation = CCLocation.sharedInstance
+        ccLocation.delegate = self
+        ccLocation.setLoggerLevels(verbose: false,
+                                          info: true,
+                                          debug: false,
+                                          warning: true,
+                                          error: true,
+                                          severe: true)
+        ccLocation.registerLocationListener()
     }
     
     private func configureLocationProvider() {
@@ -62,7 +84,7 @@ class ViewController: UIViewController {
 
 extension ViewController: ILIndoorLocationProviderDelegate {
     func provider(_ provider: ILIndoorLocationProvider!, didUpdate location: ILIndoorLocation!) {
-//        print("Location update")
+        print("Location update")
     }
     
     func provider(_ provider: ILIndoorLocationProvider!, didFailWithError error: Error!) {
@@ -148,24 +170,40 @@ extension ViewController: MWZMapwizeViewDelegate {
     }
 }
 
-extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let last = locations.last else {
-            return
-        }
+//extension ViewController: CLLocationManagerDelegate {
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let last = locations.last else {
+//            return
+//        }
 //        lastIndoorLocation = ILIndoorLocation(provider: indoorLocationProvider,
 //                                              latitude: last.coordinate.latitude,
 //                                              longitude: last.coordinate.longitude,
 //                                              floor: 1)
-        
-        let fluctuation = Float.random(in: 0.0000001 ..< 0.0000009)
-        let mockLatitude = Double(51.520546 + fluctuation)
-        let mockLongitude = Double(-0.072458 + fluctuation)
+//
+//        indoorLocationProvider?.dispatchDidUpdate(lastIndoorLocation)
+//    }
+//}
+
+extension ViewController: CCLocationDelegate {
+    func ccLocationDidConnect() {
+        // CCLocation library connected successfully
+        print("CCLocation connected successfully")
+    }
+    
+    func ccLocationDidFailWithError(error: Error) {
+        // CCLocation library failed to connect
+    }
+    
+    func didReceiveCCLocation(_ location: LocationResponse) {
+        print("CCLocation returned location from server")
         lastIndoorLocation = ILIndoorLocation(provider: indoorLocationProvider,
-                                              latitude: mockLatitude,
-                                              longitude: mockLongitude,
+                                              latitude: location.latitude,
+                                              longitude: location.longitude,
                                               floor: 1)
-        
         indoorLocationProvider?.dispatchDidUpdate(lastIndoorLocation)
+    }
+    
+    func didFailToUpdateCCLocation() {
+        // Failed to update location provider state for CCLocation
     }
 }
