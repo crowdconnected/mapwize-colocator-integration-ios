@@ -10,7 +10,7 @@ import UIKit
 import CCLocation
 
 let kCCApiKey = "YOUR_CC_KEY"
-let kCCUrlString = "staging.colocator.net:443/socket"
+let kCCUrlString = "YOUR_CC_KEY.colocator.net:443/socket"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
