@@ -20,7 +20,7 @@
 		229E2D081B827085218FC35C /* Pods_Indoor_Tracking_Colocator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Indoor_Tracking_Colocator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FBAB1AA1004C270D27AACD /* Pods-Indoor Tracking Colocator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indoor Tracking Colocator.release.xcconfig"; path = "Target Support Files/Pods-Indoor Tracking Colocator/Pods-Indoor Tracking Colocator.release.xcconfig"; sourceTree = "<group>"; };
 		504D99CAF040B397FC44FC46 /* Pods-Indoor Tracking Colocator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Indoor Tracking Colocator.debug.xcconfig"; path = "Target Support Files/Pods-Indoor Tracking Colocator/Pods-Indoor Tracking Colocator.debug.xcconfig"; sourceTree = "<group>"; };
-		97C90EA8232BB9C000442251 /* Indoor Tracking Colocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Tracking Colocator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C90EA8232BB9C000442251 /* Indoor Location Tracking Colocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Indoor Location Tracking Colocator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C90EAB232BB9C000442251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C90EAD232BB9C000442251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		97C90EAF232BB9C000442251 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		97C90EA9232BB9C000442251 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97C90EA8232BB9C000442251 /* Indoor Tracking Colocator.app */,
+				97C90EA8232BB9C000442251 /* Indoor Location Tracking Colocator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			);
 			name = "Indoor Tracking Colocator";
 			productName = "Indoor Tracking Colocator";
-			productReference = 97C90EA8232BB9C000442251 /* Indoor Tracking Colocator.app */;
+			productReference = 97C90EA8232BB9C000442251 /* Indoor Location Tracking Colocator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +362,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crowdconnected.IndoorTrackingTestApp.Indoor-Tracking-Colocator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Indoor Location Tracking Colocator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.crowdconnected.IndoorTrackingTestApp.Indoor-Tracking-Colocator";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Indoor Location Tracking Colocator";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
